@@ -16,8 +16,8 @@ function timing() {
     hour = data.getHours()
     minute = data.getMinutes()
     second = data.getSeconds()
-    // checkTime(minute)
-    // checkTime(second)
+    minute = checkTime(minute)
+    second = checkTime(second)
     // time.innerHTML = `${hour}:${minute}:${second}`
     time.innerHTML = hour + ":" + minute + ":" + second
 }
@@ -59,6 +59,17 @@ if (hour >= 6 && hour < 12) {
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i
-        return i;
+        return i
+    } else {
+        return i
     }
 }
+
+document.querySelector("input").addEventListener("keydown", (e) => {
+    console.log(e.key)
+    if (e.key == "Enter") {
+        e.preventDefault()
+        // window.open(`https://www.google.com/search?client=firefox-b-d&q=${document.querySelector("input").value}`)
+        window.open(`https://www.google.com/search?q=${document.querySelector("input").value}`)
+    }
+})
