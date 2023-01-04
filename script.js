@@ -27,8 +27,6 @@ setInterval(timing, 1000);
 
 day.innerHTML = `0${data.getDate()}/0${data.getMonth()+1}/${data.getFullYear()}`
 
-hour = 20
-
 var random = ((Math.ceil((Math.random())*100))%3)+1
 
 if (random == 1) {
